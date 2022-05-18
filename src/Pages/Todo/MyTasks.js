@@ -9,13 +9,12 @@ const MyTasks = () => {
 
   return (
     <div className="container mt-5 ">
-      <Table striped bordered hover variant="dark">
+      <Table striped bordered hover variant="secondary">
         <thead>
           <tr>
             <th className="responsive">Status</th>
 
             <th className="responsive">Task Name & Details</th>
-            <th className="responsive">user </th>
 
             <th>Remove</th>
           </tr>

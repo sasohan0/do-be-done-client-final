@@ -48,10 +48,9 @@ const Task = ({ task }) => {
         <span className="fw-bolder text-uppercase">{taskName} </span>
         <br /> <span>{taskDescription}</span>
       </td>
-      <td className="responsive">{user}</td>
 
-      <td>
-        <button onClick={() => handleTaskRemove(_id)} className="btn btn-dark">
+      <td className="responsive ">
+        <button onClick={() => handleTaskRemove(_id)} className="btn btn-link">
           <img style={{ width: "32px", height: "32px" }} src={Remove} alt="" />
         </button>
       </td>

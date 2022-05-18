@@ -13,10 +13,10 @@ const Header = () => {
 
   return (
     <div>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar collapseOnSelect expand="lg" bg="secondary" variant="dark">
         <Container>
           <Navbar.Brand as={Link} to="/home">
-            DoBeDone
+            <img src="favicon.ico" alt="" /> DoBeDone
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
