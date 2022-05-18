@@ -30,38 +30,32 @@ const Task = ({ task }) => {
     }
   };
   return (
-    <div className="col col-12 col-lg-4 col-md-6 mx-auto">
-      <Card border="primary" style={{ width: "18rem" }}>
-        <Card.Header className="d-flex justify-content-between align-items-center">
-          <p>{user} </p>
-          <button
-            className="btn btn-link"
-            onClick={() => handleTaskRemove(_id)}
-          >
-            <img
-              style={{ width: "32px", height: "32px" }}
-              src={Remove}
-              alt=""
-            />
-          </button>
-        </Card.Header>
-        <Card.Body>
-          <Card.Title className={checked ? "text-decoration-line-through" : ""}>
-            {taskName}
-          </Card.Title>
-          <Card.Text className={checked ? "text-decoration-line-through" : ""}>
-            {taskDescription}
-          </Card.Text>
-          <Button
-            className={checked ? "btn-success" : "btn-danger"}
-            onClick={handleChecked}
-          >
-            {" "}
-            Completed
-          </Button>
-        </Card.Body>
-      </Card>
-    </div>
+    <tr className="">
+      <td>
+        <Button
+          onClick={handleChecked}
+          className={checked ? "btn-success" : "btn-danger"}
+        >
+          {checked ? "Completed" : "Incomplete"}
+        </Button>
+      </td>
+
+      <td
+        className={`responsive ${
+          checked ? "text-decoration-line-through" : ""
+        }`}
+      >
+        <span className="fw-bolder text-uppercase">{taskName} </span>
+        <br /> <span>{taskDescription}</span>
+      </td>
+      <td className="responsive">{user}</td>
+
+      <td>
+        <button onClick={() => handleTaskRemove(_id)} className="btn btn-dark">
+          <img style={{ width: "32px", height: "32px" }} src={Remove} alt="" />
+        </button>
+      </td>
+    </tr>
   );
 };
 

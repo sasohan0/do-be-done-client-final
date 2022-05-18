@@ -10,6 +10,7 @@ import Footer from "./Pages/Footer/Footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import NotFound from "./Pages/NotFound/NotFound";
+import RequireAuth from "./Pages/RequireAuth/RequireAuth";
 
 function App() {
   return (
@@ -28,8 +29,22 @@ function App() {
         pauseOnHover
       />
       <Routes>
-        <Route path="/" element={<Home></Home>}></Route>
-        <Route path="/home" element={<Home></Home>}></Route>
+        <Route
+          path="/"
+          element={
+            <RequireAuth>
+              <Home></Home>
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/home"
+          element={
+            <RequireAuth>
+              <Home></Home>
+            </RequireAuth>
+          }
+        ></Route>
 
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>

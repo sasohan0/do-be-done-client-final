@@ -8,7 +8,7 @@ const Todo = () => {
   const [user, loading] = useAuthState(auth);
   const handleAddTask = async (e) => {
     e.preventDefault();
-    const user = e.target.user?.value;
+    const user = e.target.email?.value;
     const taskName = e.target.name.value;
     const taskDescription = e.target.description.value;
 
@@ -36,7 +36,8 @@ const Todo = () => {
     });
   };
   return (
-    <div>
+    <div className="container mt-5">
+      <h1 className="text-center mb-5">Add Tasks</h1>
       <Form onSubmit={(e) => handleAddTask(e)}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>User</Form.Label>

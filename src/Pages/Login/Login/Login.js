@@ -19,6 +19,7 @@ import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
 import Error from "../../Shared/Error/Error";
 import { toast } from "react-toastify";
+import GoogleIcon from "../../../icons/google.png";
 
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
@@ -129,7 +130,7 @@ const Login = () => {
             <img
               style={{ width: "40px", height: "40px" }}
               className="me-2 "
-              src="google.ico"
+              src={GoogleIcon}
               alt=""
             />
             Continue with google

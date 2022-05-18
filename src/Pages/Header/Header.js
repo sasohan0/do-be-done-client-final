@@ -16,7 +16,7 @@ const Header = () => {
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
           <Navbar.Brand as={Link} to="/home">
-            BOOKVERSE
+            DoBeDone
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -24,12 +24,6 @@ const Header = () => {
               <Nav className="ms-auto">
                 <Nav.Link as={Link} to="/home">
                   Home
-                </Nav.Link>
-                <Nav.Link as={Link} to="/inventory">
-                  Manage Items
-                </Nav.Link>
-                <Nav.Link as={Link} to="/addItem">
-                  Add Item
                 </Nav.Link>
               </Nav>
             ) : (
@@ -52,9 +46,6 @@ const Header = () => {
             <Nav>
               {user ? (
                 <Nav>
-                  <Nav.Link as={Link} to="/userItems">
-                    My Items
-                  </Nav.Link>
                   <button
                     onClick={() => signOut(auth)}
                     className="btn btn-danger"

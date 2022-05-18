@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
 import { toast } from "react-toastify";
+import GoogleIcon from "../../../icons/google.png";
 
 const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -134,7 +135,7 @@ const Register = () => {
             <img
               style={{ width: "40px", height: "40px" }}
               className="me-2 "
-              src="google.ico"
+              src={GoogleIcon}
               alt=""
             />
             Continue with google
