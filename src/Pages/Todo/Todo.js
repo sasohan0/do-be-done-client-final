@@ -17,7 +17,7 @@ const Todo = () => {
       taskName: taskName,
       taskDescription: taskDescription,
     };
-    fetch("http://localhost:5000/tasks", {
+    fetch("https://fierce-sands-92783.herokuapp.com/tasks", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -66,7 +66,7 @@ const Todo = () => {
           />
         </Form.Group>
 
-        <Button variant="primary" type="submit">
+        <Button className="w-100 btn-danger" variant="primary" type="submit">
           Add Task
         </Button>
       </Form>

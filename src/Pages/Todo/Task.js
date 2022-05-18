@@ -1,23 +1,23 @@
 import React, { useState } from "react";
 import { Button, Card, Form } from "react-bootstrap";
+import { toast } from "react-toastify";
 import Remove from "../../icons/remove.png";
 
 const Task = ({ task }) => {
   const { _id, taskDescription, taskName, user } = task;
   const [checked, setChecked] = useState(false);
 
-  const completedTaskDescription = taskDescription.strike();
-  const completedTaskName = taskName.strike();
-
   const handleChecked = () => {
     setChecked(!checked);
-    console.log(checked);
+    if (!checked) {
+      toast("Good job ! Task completed.");
+    }
   };
 
   const handleTaskRemove = (id) => {
     const confirmed = window.confirm("sure to remove?");
     if (confirmed) {
-      fetch(`http://localhost:5000/tasks/${id}`, {
+      fetch(`https://fierce-sands-92783.herokuapp.com/tasks/${id}`, {
         method: "DELETE",
         headers: {
           "content-type": "application/json",
@@ -52,13 +52,13 @@ const Task = ({ task }) => {
           <Card.Text className={checked ? "text-decoration-line-through" : ""}>
             {taskDescription}
           </Card.Text>
-          <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Check
-              onChange={handleChecked}
-              type="checkbox"
-              label="Completed?"
-            />
-          </Form.Group>
+          <Button
+            className={checked ? "btn-success" : "btn-danger"}
+            onClick={handleChecked}
+          >
+            {" "}
+            Completed
+          </Button>
         </Card.Body>
       </Card>
     </div>
